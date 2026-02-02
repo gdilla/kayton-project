@@ -295,22 +295,60 @@
   background: radial-gradient(circle at 50% 50%, var(--cancri-primary) 0%, transparent 50%);
 }
 
-/* Kepler-16b - Tatooine Planet */
+/* Kepler-16b - Tatooine Planet with Yellow Stripes */
 #kepler-16b {
-  background: linear-gradient(135deg, #3d2a1f 0%, #6b4d3a 50%, #D4A574 100%);
+  background: linear-gradient(135deg, #8B7355 0%, #A89078 50%, #C4B5A0 100%);
+  position: relative;
+}
+
+#kepler-16b::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      165deg,
+      transparent 0%,
+      transparent 15%,
+      rgba(218, 186, 0, 0.3) 15%,
+      rgba(218, 186, 0, 0.3) 20%,
+      transparent 20%,
+      transparent 35%
+    ),
+    repeating-linear-gradient(
+      -15deg,
+      transparent 0%,
+      transparent 20%,
+      rgba(218, 186, 0, 0.2) 20%,
+      rgba(218, 186, 0, 0.2) 25%,
+      transparent 25%,
+      transparent 45%
+    );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+#kepler-16b .planet-content {
+  position: relative;
+  z-index: 10;
 }
 
 #kepler-16b .planet-name {
-  color: var(--kepler-primary);
+  color: #DAB900;
+  text-shadow: 0 0 20px rgba(218, 185, 0, 0.5);
 }
 
 #kepler-16b .planet-highlight {
-  border-left-color: var(--kepler-secondary);
+  border-left-color: #DAB900;
 }
 
 #kepler-16b::before {
-  background: radial-gradient(circle at 40% 40%, var(--kepler-secondary) 0%, transparent 40%),
-              radial-gradient(circle at 60% 40%, rgba(255, 165, 0, 0.5) 0%, transparent 40%);
+  background: radial-gradient(circle at 40% 40%, rgba(255, 165, 0, 0.4) 0%, transparent 40%),
+              radial-gradient(circle at 60% 40%, rgba(255, 200, 87, 0.3) 0%, transparent 40%);
 }
 
 /* TrES-2b - Darkest Planet */
