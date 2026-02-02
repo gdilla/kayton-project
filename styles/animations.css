@@ -1,0 +1,411 @@
+/* ==========================================
+   ANIMATIONS & EFFECTS
+   ========================================== */
+
+/* Fade In on Scroll */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Particle Effects Container */
+.particle-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Glass Rain Effect - HD 189733 b */
+.glass-particle {
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(180deg, transparent 0%, var(--hd189733b-secondary) 50%, transparent 100%);
+  opacity: 0.6;
+  animation: glass-fall linear infinite;
+  box-shadow: 0 0 10px var(--hd189733b-secondary);
+}
+
+@keyframes glass-fall {
+  0% {
+    transform: translateY(-100px) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Iron Rain Effect - WASP-76b */
+.iron-particle {
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background: linear-gradient(180deg, #FFD700 0%, #FF8C00 50%, #FF6B35 100%);
+  opacity: 0.7;
+  animation: iron-fall linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.8);
+}
+
+@keyframes iron-fall {
+  0% {
+    transform: translateY(-100px) rotate(25deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Lava Flow Effect - 55 Cancri e */
+.lava-flow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(255, 69, 0, 0.2) 30%, 
+    rgba(255, 140, 0, 0.3) 60%, 
+    rgba(255, 215, 0, 0.4) 100%
+  );
+  animation: lava-pulse 4s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+@keyframes lava-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(1.1);
+  }
+}
+
+.lava-bubble {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 69, 0, 0.4) 100%);
+  animation: bubble-rise ease-in-out infinite;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-400px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Orbital Speed Indicator - 55 Cancri e */
+.orbit-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: var(--spacing-sm);
+  border-radius: 12px;
+  border: 2px solid var(--cancri-secondary);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-mono);
+  z-index: 20;
+}
+
+.orbit-clock {
+  font-size: 2rem;
+  color: var(--cancri-secondary);
+  font-weight: 700;
+  text-shadow: 0 0 20px var(--cancri-secondary);
+}
+
+/* Dual Suns - Kepler-16b */
+.dual-suns {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  animation: sun-pulse 3s ease-in-out infinite;
+}
+
+.sun-1 {
+  background: radial-gradient(circle, #FFA500 0%, #FF8C00 40%, transparent 70%);
+  box-shadow: 0 0 80px rgba(255, 165, 0, 0.8);
+  animation-delay: 0s;
+}
+
+.sun-2 {
+  background: radial-gradient(circle, #FF6347 0%, #FF4500 40%, transparent 70%);
+  box-shadow: 0 0 60px rgba(255, 99, 71, 0.6);
+  animation-delay: 1.5s;
+}
+
+@keyframes sun-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Light Absorption Visualization - TrES-2b */
+.light-absorption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.light-ray {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, transparent 100%);
+  animation: light-fade 3s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes light-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+.absorption-meter {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 30px;
+  border: 2px solid var(--tres2b-secondary);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.meter-bar {
+  width: 200px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 1%;
+  background: linear-gradient(90deg, var(--tres2b-secondary) 0%, #FF0000 100%);
+  border-radius: 10px;
+  animation: fill-meter 3s ease-in-out infinite;
+}
+
+@keyframes fill-meter {
+  0%, 100% { width: 1%; }
+  50% { width: 2%; }
+}
+
+/* Temperature Gauge */
+.temperature-gauge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.temp-bar {
+  width: 150px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.temp-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #0066ff 0%, #ffaa00 50%, #ff0000 100%);
+  transition: width 1s ease;
+}
+
+/* Floating Animation for Elements */
+.float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Pulsing Glow */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 40px currentColor;
+  }
+}
+
+/* Shimmer Effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+  .dual-suns {
+    max-width: 400px;
+    height: 150px;
+  }
+  
+  .sun {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .orbit-indicator {
+    top: 10px;
+    right: 10px;
+    padding: var(--spacing-xs);
+  }
+  
+  .orbit-clock {
+    font-size: 1.5rem;
+  }
+  
+  .meter-bar {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .absorption-meter {
+    bottom: 20px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .meter-bar {
+    width: 100px;
+    height: 15px;
+  }
+  
+  .dual-suns {
+    max-width: 300px;
+    height: 120px;
+  }
+  
+  .sun {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

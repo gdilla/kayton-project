@@ -1,0 +1,369 @@
+/* ==========================================
+   PLANET SECTION STYLES
+   ========================================== */
+
+/* General Planet Section */
+.planet-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  overflow: hidden;
+}
+
+.planet-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.planet-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.planet-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.planet-name {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 0 30px currentColor;
+}
+
+.planet-type {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--star-glow);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+/* Stats Grid */
+.planet-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: var(--spacing-md);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-medium);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--star-glow);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* Why Interesting Section */
+.planet-highlight {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid currentColor;
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+}
+
+.planet-highlight h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.planet-highlight p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Key Features */
+.planet-features {
+  margin-bottom: var(--spacing-lg);
+}
+
+.planet-features h3 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.features-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.features-list li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.features-list li::before {
+  content: '→';
+  font-size: 1.5rem;
+  color: currentColor;
+}
+
+/* Fun Fact */
+.fun-fact {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 20px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.fun-fact-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--star-glow);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.fun-fact-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Further Reading */
+.further-reading {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.further-reading h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-icon {
+  transition: transform var(--transition-fast);
+}
+
+.further-reading.collapsed .toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.reading-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height var(--transition-medium);
+}
+
+.further-reading.collapsed .reading-links {
+  max-height: 0;
+}
+
+.reading-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.reading-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(10px);
+}
+
+/* Back Button */
+.back-to-home {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+.back-to-home .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ==========================================
+   INDIVIDUAL PLANET STYLES
+   ========================================== */
+
+/* HD 189733 b - Blue Glass Planet */
+#hd-189733-b {
+  background: linear-gradient(135deg, #001a4d 0%, #003d7a 50%, #0047AB 100%);
+}
+
+#hd-189733-b .planet-name {
+  color: var(--hd189733b-secondary);
+}
+
+#hd-189733-b .planet-highlight {
+  border-left-color: var(--hd189733b-secondary);
+}
+
+#hd-189733-b::before {
+  background: radial-gradient(circle at 30% 50%, var(--hd189733b-secondary) 0%, transparent 50%);
+}
+
+/* WASP-76b - Iron Rain Planet */
+#wasp-76b {
+  background: linear-gradient(135deg, #4a0000 0%, #8B0000 50%, #FF6B35 100%);
+}
+
+#wasp-76b .planet-name {
+  color: var(--wasp76b-primary);
+}
+
+#wasp-76b .planet-highlight {
+  border-left-color: var(--wasp76b-primary);
+}
+
+#wasp-76b::before {
+  background: radial-gradient(circle at 70% 30%, var(--wasp76b-primary) 0%, transparent 50%);
+}
+
+/* 55 Cancri e - Lava Ocean Planet */
+#cancri-e {
+  background: linear-gradient(135deg, #330000 0%, #660000 50%, #FF4500 100%);
+}
+
+#cancri-e .planet-name {
+  color: var(--cancri-secondary);
+}
+
+#cancri-e .planet-highlight {
+  border-left-color: var(--cancri-secondary);
+}
+
+#cancri-e::before {
+  background: radial-gradient(circle at 50% 50%, var(--cancri-primary) 0%, transparent 50%);
+}
+
+/* Kepler-16b - Tatooine Planet */
+#kepler-16b {
+  background: linear-gradient(135deg, #3d2a1f 0%, #6b4d3a 50%, #D4A574 100%);
+}
+
+#kepler-16b .planet-name {
+  color: var(--kepler-primary);
+}
+
+#kepler-16b .planet-highlight {
+  border-left-color: var(--kepler-secondary);
+}
+
+#kepler-16b::before {
+  background: radial-gradient(circle at 40% 40%, var(--kepler-secondary) 0%, transparent 40%),
+              radial-gradient(circle at 60% 40%, rgba(255, 165, 0, 0.5) 0%, transparent 40%);
+}
+
+/* TrES-2b - Darkest Planet */
+#tres-2b {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1C1C1C 100%);
+}
+
+#tres-2b .planet-name {
+  color: var(--tres2b-secondary);
+}
+
+#tres-2b .planet-highlight {
+  border-left-color: var(--tres2b-secondary);
+}
+
+#tres-2b::before {
+  background: radial-gradient(circle at 50% 50%, var(--tres2b-secondary) 0%, transparent 70%);
+  opacity: 0.2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .planet-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .planet-header {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .planet-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .planet-name {
+    font-size: 2.5rem;
+  }
+  
+  .planet-type {
+    font-size: 1rem;
+  }
+  
+  .stat-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .fun-fact-text {
+    font-size: 1.1rem;
+  }
+}

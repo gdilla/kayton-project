@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore 5 extreme exoplanets - from glass rain to iron storms, lava oceans to planets darker than coal. An interactive journey through the most extraordinary worlds beyond our solar system.">
+  <meta name="keywords" content="exoplanets, space, astronomy, HD 189733 b, WASP-76b, 55 Cancri e, Kepler-16b, TrES-2b">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Extreme Worlds: 5 Extraordinary Exoplanets">
+  <meta property="og:description" content="Explore the most extreme planets ever discovered">
+  <meta property="og:type" content="website">
+  
+  <title>Extreme Worlds: 5 Extraordinary Exoplanets</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/landing.css">
+  <link rel="stylesheet" href="styles/planets.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="nav-logo">EXTREME WORLDS</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#planets">Planets</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <canvas id="starfield"></canvas>
+    <div class="hero-content fade-in">
+      <h1 class="hero-title">Extreme Worlds</h1>
+      <p class="hero-subtitle">5 Extraordinary Exoplanets</p>
+      <a href="#planets" class="btn hero-cta">
+        Explore the Cosmos →
+      </a>
+    </div>
+  </section>
+
+  <!-- Planet Grid Overview -->
+  <section id="planets" class="planet-grid section">
+    <div class="container">
+      <h2 class="planet-grid-title fade-in-up">Choose Your Destination</h2>
+      
+      <div class="planets-container">
+        
+        <!-- HD 189733 b Card -->
+        <div class="planet-card fade-in-up" data-planet="hd189733b" onclick="location.href='#hd-189733-b'">
+          <div class="planet-card-image">
+            <div class="planet-icon" style="color: var(--hd189733b-secondary);">🔵</div>
+          </div>
+          <div class="planet-card-content">
+            <h3 class="planet-card-name">HD 189733 b</h3>
+            <p class="planet-card-type">Gas Giant</p>
+            <p class="planet-card-fact">May rain molten glass sideways in hypersonic winds</p>
+            <a href="#hd-189733-b" class="planet-card-link" style="color: var(--hd189733b-secondary);">
+              Explore Planet →
+            </a>
+          </div>
+        </div>
+
+        <!-- WASP-76b Card -->
+        <div class="planet-card fade-in-up" data-planet="wasp76b" onclick="location.href='#wasp-76b'">
+          <div class="planet-card-image">
+            <div class="planet-icon" style="color: var(--wasp76b-primary);">🔥</div>
+          </div>
+          <div class="planet-card-content">
+            <h3 class="planet-card-name">WASP-76b</h3>
+            <p class="planet-card-type">Gas Giant</p>
+            <p class="planet-card-fact">Iron vaporizes and rains down from the sky</p>
+            <a href="#wasp-76b" class="planet-card-link" style="color: var(--wasp76b-primary);">
+              Explore Planet →
+            </a>
+          </div>
+        </div>
+
+        <!-- 55 Cancri e Card -->
+        <div class="planet-card fade-in-up" data-planet="cancri" onclick="location.href='#cancri-e'">
+          <div class="planet-card-image">
+            <div class="planet-icon" style="color: var(--cancri-secondary);">🌋</div>
+          </div>
+          <div class="planet-card-content">
+            <h3 class="planet-card-name">55 Cancri e</h3>
+            <p class="planet-card-type">Super-Earth</p>
+            <p class="planet-card-fact">Orbits its star in just 18 hours with lava oceans</p>
+            <a href="#cancri-e" class="planet-card-link" style="color: var(--cancri-secondary);">
+              Explore Planet →
+            </a>
+          </div>
+        </div>
+
+        <!-- Kepler-16b Card -->
+        <div class="planet-card fade-in-up" data-planet="kepler16b" onclick="location.href='#kepler-16b'">
+          <div class="planet-card-image">
+            <div class="planet-icon" style="color: var(--kepler-primary);">🌅</div>
+          </div>
+          <div class="planet-card-content">
+            <h3 class="planet-card-name">Kepler-16b</h3>
+            <p class="planet-card-type">Gas Giant</p>
+            <p class="planet-card-fact">Orbits two stars - the real-life Tatooine</p>
+            <a href="#kepler-16b" class="planet-card-link" style="color: var(--kepler-primary);">
+              Explore Planet →
+            </a>
+          </div>
+        </div>
+
+        <!-- TrES-2b Card -->
+        <div class="planet-card fade-in-up" data-planet="tres2b" onclick="location.href='#tres-2b'">
+          <div class="planet-card-image">
+            <div class="planet-icon" style="color: var(--tres2b-secondary);">⚫</div>
+          </div>
+          <div class="planet-card-content">
+            <h3 class="planet-card-name">TrES-2b</h3>
+            <p class="planet-card-type">Gas Giant</p>
+            <p class="planet-card-fact">The darkest planet ever discovered - darker than coal</p>
+            <a href="#tres-2b" class="planet-card-link" style="color: var(--tres2b-secondary);">
+              Explore Planet →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PLANET SECTIONS
+       ============================================ -->
+
+  <!-- HD 189733 b -->
+  <section id="hd-189733-b" class="planet-section">
+    <div class="particle-effect" id="glass-rain"></div>
+    
+    <div class="planet-content">
+      <div class="planet-header fade-in-up">
+        <h2 class="planet-name">HD 189733 b</h2>
+        <p class="planet-type">Gas Giant</p>
+      </div>
+
+      <div class="planet-stats fade-in-up">
+        <div class="stat-card">
+          <div class="stat-label">Distance from Earth</div>
+          <div class="stat-value">~64 light years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discovery Method</div>
+          <div class="stat-value">Radial Velocity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Day Side Temp</div>
+          <div class="stat-value">~930°C</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Night Side Temp</div>
+          <div class="stat-value">~650°C</div>
+        </div>
+      </div>
+
+      <div class="planet-highlight fade-in-up" style="border-left-color: var(--hd189733b-secondary);">
+        <h3>Why It's Interesting</h3>
+        <p>HD 189733 b has extreme temperature differences between its day and night sides (~650°C dark side to ~930°C sunlit side) and displays a distinctive blue color. This hostile world experiences some of the most violent weather in the known universe.</p>
+      </div>
+
+      <div class="planet-features fade-in-up">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li style="color: var(--hd189733b-secondary);">Very hot with extreme temperature variations</li>
+          <li style="color: var(--hd189733b-secondary);">Strong winds reaching 7,000+ km/h</li>
+          <li style="color: var(--hd189733b-secondary);">Thick atmosphere with silicate particles</li>
+          <li style="color: var(--hd189733b-secondary);">Beautiful blue color visible from space</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact fade-in-up">
+        <div class="fun-fact-label">⭐ Fun Fact</div>
+        <p class="fun-fact-text">May rain molten glass sideways in howling winds. The blue color comes from silicate particles in the atmosphere that scatter blue light!</p>
+      </div>
+
+      <div class="further-reading fade-in-up">
+        <h3 onclick="this.parentElement.classList.toggle('collapsed')">
+          Further Reading
+          <span class="toggle-icon">▼</span>
+        </h3>
+        <div class="reading-links">
+          <a href="https://science.nasa.gov/exoplanet-catalog/hd-189733-b/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Catalog - HD 189733 b
+          </a>
+          <a href="https://www.esa.int/Science_Exploration/Space_Science/Hubble_finds_a_true_blue_planet" target="_blank" class="reading-link">
+            🔗 ESA - Hubble Finds a True Blue Planet
+          </a>
+          <a href="https://exoplanets.nasa.gov/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Exploration
+          </a>
+        </div>
+      </div>
+
+      <div class="back-to-home fade-in-up">
+        <a href="#planets" class="btn">← Back to All Planets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WASP-76b -->
+  <section id="wasp-76b" class="planet-section">
+    <div class="particle-effect" id="iron-rain"></div>
+    
+    <div class="planet-content">
+      <div class="planet-header fade-in-up">
+        <h2 class="planet-name">WASP-76b</h2>
+        <p class="planet-type">Gas Giant</p>
+      </div>
+
+      <div class="planet-stats fade-in-up">
+        <div class="stat-card">
+          <div class="stat-label">Distance from Earth</div>
+          <div class="stat-value">~640 light years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discovery Method</div>
+          <div class="stat-value">Transit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Day Temperature</div>
+          <div class="stat-value">~2,400°C</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Weather Type</div>
+          <div class="stat-value">Iron Rain</div>
+        </div>
+      </div>
+
+      <div class="planet-highlight fade-in-up" style="border-left-color: var(--wasp76b-primary);">
+        <h3>Why It's Interesting</h3>
+        <p>WASP-76b is so hot that iron can vaporize in its atmosphere. Scientists believe that on the cooler night side of the planet, the iron could condense and then rain down as liquid metal droplets.</p>
+      </div>
+
+      <div class="planet-features fade-in-up">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li style="color: var(--wasp76b-primary);">Day temperature of 2,400°C - hot enough to vaporize iron</li>
+          <li style="color: var(--wasp76b-primary);">Huge temperature difference between day and night</li>
+          <li style="color: var(--wasp76b-primary);">Tidally locked to its star (one side always faces sun)</li>
+          <li style="color: var(--wasp76b-primary);">Atmospheric winds transport vaporized metals</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact fade-in-up">
+        <div class="fun-fact-label">⭐ Fun Fact</div>
+        <p class="fun-fact-text">WASP-76b might have iron rain, making it one of the most extreme weather planets ever discovered. Imagine droplets of molten iron falling from the sky!</p>
+      </div>
+
+      <div class="further-reading fade-in-up">
+        <h3 onclick="this.parentElement.classList.toggle('collapsed')">
+          Further Reading
+          <span class="toggle-icon">▼</span>
+        </h3>
+        <div class="reading-links">
+          <a href="https://science.nasa.gov/exoplanet-catalog/wasp-76-b/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Catalog - WASP-76b
+          </a>
+          <a href="https://www.eso.org/public/news/eso2005/" target="_blank" class="reading-link">
+            🔗 ESO - Iron Rain on Ultra-Hot Exoplanet
+          </a>
+          <a href="https://exoplanets.nasa.gov/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Exploration
+          </a>
+        </div>
+      </div>
+
+      <div class="back-to-home fade-in-up">
+        <a href="#planets" class="btn">← Back to All Planets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 55 Cancri e -->
+  <section id="cancri-e" class="planet-section">
+    <div class="lava-flow"></div>
+    <div class="particle-effect" id="lava-bubbles"></div>
+    
+    <div class="orbit-indicator fade-in">
+      <div style="font-size: 0.8rem; margin-bottom: 5px; opacity: 0.8;">Orbital Period</div>
+      <div class="orbit-clock" id="orbit-clock">18:00:00</div>
+    </div>
+    
+    <div class="planet-content">
+      <div class="planet-header fade-in-up">
+        <h2 class="planet-name">55 Cancri e</h2>
+        <p class="planet-type">Super-Earth</p>
+      </div>
+
+      <div class="planet-stats fade-in-up">
+        <div class="stat-card">
+          <div class="stat-label">Distance from Earth</div>
+          <div class="stat-value">~41 light years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discovery Method</div>
+          <div class="stat-value">Transit Method</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Orbital Period</div>
+          <div class="stat-value">18 hours</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Surface Temp</div>
+          <div class="stat-value">1,700-2,400°C</div>
+        </div>
+      </div>
+
+      <div class="planet-highlight fade-in-up" style="border-left-color: var(--cancri-secondary);">
+        <h3>Why It's Interesting</h3>
+        <p>Since 55 Cancri e orbits its star incredibly quickly (just 18 hours!), scientists believe that its surface is covered with oceans of molten lava. This super-Earth is larger than our planet but smaller than gas giants.</p>
+      </div>
+
+      <div class="planet-features fade-in-up">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li style="color: var(--cancri-secondary);">Larger than Earth but smaller than gas giants</li>
+          <li style="color: var(--cancri-secondary);">Completes full orbit in just 18 hours</li>
+          <li style="color: var(--cancri-secondary);">Surface temperature 1,700-2,400°C on hot side</li>
+          <li style="color: var(--cancri-secondary);">Possibly covered in lava oceans</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact fade-in-up">
+        <div class="fun-fact-label">⭐ Fun Fact</div>
+        <p class="fun-fact-text">It takes just 18 hours to orbit its star fully! That means a "year" on this planet is shorter than a day on Earth. Imagine celebrating your birthday every 18 hours!</p>
+      </div>
+
+      <div class="further-reading fade-in-up">
+        <h3 onclick="this.parentElement.classList.toggle('collapsed')">
+          Further Reading
+          <span class="toggle-icon">▼</span>
+        </h3>
+        <div class="reading-links">
+          <a href="https://science.nasa.gov/exoplanet-catalog/55-cancri-e/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Catalog - 55 Cancri e
+          </a>
+          <a href="https://www.space.com/18242-super-earth-exoplanet-55-cancri-e.html" target="_blank" class="reading-link">
+            🔗 Space.com - The Lava World
+          </a>
+          <a href="https://exoplanets.nasa.gov/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Exploration
+          </a>
+        </div>
+      </div>
+
+      <div class="back-to-home fade-in-up">
+        <a href="#planets" class="btn">← Back to All Planets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kepler-16b -->
+  <section id="kepler-16b" class="planet-section">
+    <div class="dual-suns fade-in">
+      <div class="sun sun-1"></div>
+      <div class="sun sun-2"></div>
+    </div>
+    
+    <div class="planet-content">
+      <div class="planet-header fade-in-up">
+        <h2 class="planet-name">Kepler-16b</h2>
+        <p class="planet-type">Gas Giant</p>
+      </div>
+
+      <div class="planet-stats fade-in-up">
+        <div class="stat-card">
+          <div class="stat-label">Distance from Earth</div>
+          <div class="stat-value">~200 light years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discovery Method</div>
+          <div class="stat-value">Transit Method</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Number of Stars</div>
+          <div class="stat-value">2 (Binary System)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Temperature</div>
+          <div class="stat-value">~-85°C</div>
+        </div>
+      </div>
+
+      <div class="planet-highlight fade-in-up" style="border-left-color: var(--kepler-secondary);">
+        <h3>Why It's Interesting</h3>
+        <p>Kepler-16b orbits two stars in a binary system, making it a real-life version of Tatooine from Star Wars! Despite the complex gravitational forces, it maintains a stable orbit around both suns.</p>
+      </div>
+
+      <div class="planet-features fade-in-up">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li style="color: var(--kepler-secondary);">Orbits two stars simultaneously (circumbinary orbit)</li>
+          <li style="color: var(--kepler-secondary);">Has a stable orbit despite complex gravity</li>
+          <li style="color: var(--kepler-secondary);">Cold temperature around -85°C</li>
+          <li style="color: var(--kepler-secondary);">Gas giant similar to Saturn</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact fade-in-up">
+        <div class="fun-fact-label">⭐ Fun Fact</div>
+        <p class="fun-fact-text">It has 2 sunsets! From this planet's surface, you would see two suns setting at different times, just like Luke Skywalker's view from Tatooine in Star Wars!</p>
+      </div>
+
+      <div class="further-reading fade-in-up">
+        <h3 onclick="this.parentElement.classList.toggle('collapsed')">
+          Further Reading
+          <span class="toggle-icon">▼</span>
+        </h3>
+        <div class="reading-links">
+          <a href="https://science.nasa.gov/exoplanet-catalog/kepler-16-b/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Catalog - Kepler-16b
+          </a>
+          <a href="https://www.nasa.gov/mission_pages/kepler/news/kepler-16b.html" target="_blank" class="reading-link">
+            🔗 NASA - Real-Life Tatooine
+          </a>
+          <a href="https://exoplanets.nasa.gov/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Exploration
+          </a>
+        </div>
+      </div>
+
+      <div class="back-to-home fade-in-up">
+        <a href="#planets" class="btn">← Back to All Planets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TrES-2b -->
+  <section id="tres-2b" class="planet-section">
+    <div class="light-absorption" id="light-rays"></div>
+    
+    <div class="absorption-meter fade-in">
+      <span style="font-size: 0.9rem; font-weight: 600;">Light Reflection:</span>
+      <div class="meter-bar">
+        <div class="meter-fill"></div>
+      </div>
+      <span style="font-size: 0.9rem; font-family: var(--font-mono);">&lt;1%</span>
+    </div>
+    
+    <div class="planet-content">
+      <div class="planet-header fade-in-up">
+        <h2 class="planet-name">TrES-2b</h2>
+        <p class="planet-type">Gas Giant</p>
+      </div>
+
+      <div class="planet-stats fade-in-up">
+        <div class="stat-card">
+          <div class="stat-label">Distance from Earth</div>
+          <div class="stat-value">~750 light years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Discovery Method</div>
+          <div class="stat-value">Transit Method</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Light Reflection</div>
+          <div class="stat-value">&lt;1%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Temperature</div>
+          <div class="stat-value">~1,600°C</div>
+        </div>
+      </div>
+
+      <div class="planet-highlight fade-in-up" style="border-left-color: var(--tres2b-secondary);">
+        <h3>Why It's Interesting</h3>
+        <p>TrES-2b is the darkest exoplanet ever discovered, reflecting less than 1% of the light that hits it. This makes it darker than coal or even black acrylic paint! The extreme darkness is still a mystery to scientists.</p>
+      </div>
+
+      <div class="planet-features fade-in-up">
+        <h3>Key Features</h3>
+        <ul class="features-list">
+          <li style="color: var(--tres2b-secondary);">Extremely low light reflection (&lt;1%)</li>
+          <li style="color: var(--tres2b-secondary);">Very hot atmosphere around 1,600°C</li>
+          <li style="color: var(--tres2b-secondary);">Darker than coal or any substance on Earth</li>
+          <li style="color: var(--tres2b-secondary);">Jupiter-sized gas giant</li>
+        </ul>
+      </div>
+
+      <div class="fun-fact fade-in-up">
+        <div class="fun-fact-label">⭐ Fun Fact</div>
+        <p class="fun-fact-text">TrES-2b is darker than coal! It absorbs 99% of light that hits it, making it nearly invisible. Scientists think exotic atmospheric chemistry causes this extreme darkness.</p>
+      </div>
+
+      <div class="further-reading fade-in-up">
+        <h3 onclick="this.parentElement.classList.toggle('collapsed')">
+          Further Reading
+          <span class="toggle-icon">▼</span>
+        </h3>
+        <div class="reading-links">
+          <a href="https://science.nasa.gov/exoplanet-catalog/tres-2-b/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Catalog - TrES-2b
+          </a>
+          <a href="https://www.space.com/12551-darkest-alien-planet-tres-2b.html" target="_blank" class="reading-link">
+            🔗 Space.com - The Darkest Planet
+          </a>
+          <a href="https://exoplanets.nasa.gov/" target="_blank" class="reading-link">
+            🔗 NASA Exoplanet Exploration
+          </a>
+        </div>
+      </div>
+
+      <div class="back-to-home fade-in-up">
+        <a href="#planets" class="btn">← Back to All Planets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/app.js"></script>
+  
+</body>
+</html>
