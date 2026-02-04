@@ -1,0 +1,23 @@
+{
+  "name": "kayton-project",
+  "version": "1.0.0",
+  "description": "An interactive website showcasing 5 extraordinary exoplanets with unique characteristics, from glass rain to iron storms. Built for a science project with QR code integration for easy mobile access.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdilla/kayton-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdilla/kayton-project/issues"
+  },
+  "homepage": "https://github.com/gdilla/kayton-project#readme",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable QR Codes - Extreme Worlds</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #1a1a1a;
+      color: white;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-back {
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .nav-back:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-print {
+      padding: 0.6rem 1.2rem;
+      background: #FFD700;
+      border: none;
+      border-radius: 8px;
+      color: black;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .nav-print:hover {
+      background: #FFC000;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 3rem;
+    }
+
+    .qr-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .qr-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .qr-card img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1.5rem;
+    }
+
+    .qr-card h3 {
+      color: #1a1a1a;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .qr-card .label {
+      color: #666;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .qr-card .url {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #0066cc;
+      word-break: break-all;
+      background: #f0f0f0;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+
+    .planet-color {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
+
+    .color-landing { background: linear-gradient(90deg, #0047AB, #FFD700); }
+    .color-hd189733b { background: #0047AB; }
+    .color-wasp76b { background: #FF6B35; }
+    .color-cancri { background: #FF4500; }
+    .color-kepler16b { background: #DAB900; }
+    .color-tres2b { background: #8B0000; }
+
+    .instructions {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .instructions h2 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+
+    .instructions ul {
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 2;
+      padding-left: 1.5rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0.5in;
+      }
+
+      .nav, .subtitle, .instructions {
+        display: none !important;
+      }
+
+      h1 {
+        color: black;
+        -webkit-text-fill-color: black;
+        margin-bottom: 0.5in;
+      }
+
+      .qr-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5in;
+      }
+
+      .qr-card {
+        box-shadow: none;
+        border: 2px solid #333;
+        page-break-inside: avoid;
+      }
+
+      .qr-card img {
+        width: 2.5in;
+        height: 2.5in;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="trifold.html" class="nav-back">← Back to Trifold Board</a>
+    <button onclick="window.print()" class="nav-print">🖨️ Print QR Codes</button>
+  </nav>
+
+  <h1>📱 Printable QR Codes</h1>
+  <p class="subtitle">Cut out and attach to your trifold board • All codes link to kayton-project.vercel.app</p>
+
+  <div class="qr-grid">
+    
+    <!-- Landing Page -->
+    <div class="qr-card">
+      <div class="planet-color color-landing"></div>
+      <img src="assets/qrcodes/qr-landing-page.png" alt="QR Code - Landing Page">
+      <h3>🌌 Main Website</h3>
+      <p class="label">Landing Page</p>
+      <p class="url">kayton-project.vercel.app</p>
+    </div>
+
+    <!-- HD 189733 b -->
+    <div class="qr-card">
+      <div class="planet-color color-hd189733b"></div>
+      <img src="assets/qrcodes/qr-hd-189733-b.png" alt="QR Code - HD 189733 b">
+      <h3>🔵 HD 189733 b</h3>
+      <p class="label">Glass Rain Planet</p>
+      <p class="url">kayton-project.vercel.app#hd-189733-b</p>
+    </div>
+
+    <!-- WASP-76b -->
+    <div class="qr-card">
+      <div class="planet-color color-wasp76b"></div>
+      <img src="assets/qrcodes/qr-wasp-76b.png" alt="QR Code - WASP-76b">
+      <h3>🔥 WASP-76b</h3>
+      <p class="label">Iron Rain Planet</p>
+      <p class="url">kayton-project.vercel.app#wasp-76b</p>
+    </div>
+
+    <!-- 55 Cancri e -->
+    <div class="qr-card">
+      <div class="planet-color color-cancri"></div>
+      <img src="assets/qrcodes/qr-cancri-e.png" alt="QR Code - 55 Cancri e">
+      <h3>🌋 55 Cancri e</h3>
+      <p class="label">Lava Ocean Planet</p>
+      <p class="url">kayton-project.vercel.app#cancri-e</p>
+    </div>
+
+    <!-- Kepler-16b -->
+    <div class="qr-card">
+      <div class="planet-color color-kepler16b"></div>
+      <img src="assets/qrcodes/qr-kepler-16b.png" alt="QR Code - Kepler-16b">
+      <h3>🌅 Kepler-16b</h3>
+      <p class="label">Real-Life Tatooine</p>
+      <p class="url">kayton-project.vercel.app#kepler-16b</p>
+    </div>
+
+    <!-- TrES-2b -->
+    <div class="qr-card">
+      <div class="planet-color color-tres2b"></div>
+      <img src="assets/qrcodes/qr-tres-2b.png" alt="QR Code - TrES-2b">
+      <h3>⚫ TrES-2b</h3>
+      <p class="label">Darkest Planet</p>
+      <p class="url">kayton-project.vercel.app#tres-2b</p>
+    </div>
+
+  </div>
+
+  <div class="instructions">
+    <h2>📋 Printing Tips</h2>
+    <ul>
+      <li><strong>Print Size:</strong> QR codes should be at least 1" × 1" for easy scanning, 2" × 2" recommended for the board</li>
+      <li><strong>Paper:</strong> Use white cardstock or photo paper for best results</li>
+      <li><strong>Test First:</strong> Print a test page and scan all QR codes before final printing</li>
+      <li><strong>Cut Carefully:</strong> Leave a small white border around each QR code</li>
+      <li><strong>Mount:</strong> Use double-sided tape or glue stick to attach to your trifold board</li>
+      <li><strong>Placement:</strong> QR codes should be at eye level for easy scanning</li>
+    </ul>
+  </div>
+
+</body>
+</html>

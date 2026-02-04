@@ -66,38 +66,35 @@ Then in Vercel dashboard:
 
 ## 📱 QR Code Generation
 
-After deployment, you'll get a URL like: `https://exoplanets.vercel.app`
+**✅ QR codes have been generated!** They are located in `assets/qrcodes/`.
 
-### Step 1: Note Your URLs
+### Live Site URLs
 
 ```
-Landing Page:  https://your-site.vercel.app
-HD 189733 b:   https://your-site.vercel.app#hd-189733-b
-WASP-76b:      https://your-site.vercel.app#wasp-76b
-55 Cancri e:   https://your-site.vercel.app#cancri-e
-Kepler-16b:    https://your-site.vercel.app#kepler-16b
-TrES-2b:       https://your-site.vercel.app#tres-2b
+Landing Page:  https://kayton-project.vercel.app
+HD 189733 b:   https://kayton-project.vercel.app#hd-189733-b
+WASP-76b:      https://kayton-project.vercel.app#wasp-76b
+55 Cancri e:   https://kayton-project.vercel.app#cancri-e
+Kepler-16b:    https://kayton-project.vercel.app#kepler-16b
+TrES-2b:       https://kayton-project.vercel.app#tres-2b
 ```
 
-### Step 2: Generate QR Codes
+### Generated QR Code Files
 
-**Recommended Generator**: [QR Code Generator](https://www.qr-code-generator.com/)
+Located in `assets/qrcodes/`:
+- `qr-landing-page.png` / `.svg` - Main website
+- `qr-hd-189733-b.png` / `.svg` - HD 189733 b
+- `qr-wasp-76b.png` / `.svg` - WASP-76b
+- `qr-cancri-e.png` / `.svg` - 55 Cancri e
+- `qr-kepler-16b.png` / `.svg` - Kepler-16b
+- `qr-tres-2b.png` / `.svg` - TrES-2b
 
-For each URL:
-1. Go to QR code generator
-2. Paste the URL
-3. **Settings**:
-   - Format: PNG or SVG
-   - Size: 300x300 pixels minimum (for printing: 600x600)
-   - Error correction: High
-   - Color: Black (or planet-themed colors)
-4. Download the QR code
-5. Name it clearly: `qr-hd189733b.png`, etc.
+### Regenerate QR Codes (if needed)
 
-**Alternative Generators**:
-- [QR Code Monkey](https://www.qrcode-monkey.com/) - Customizable colors
-- [Canva QR Generator](https://www.canva.com/qr-code-generator/) - Design integration
-- [QR.io](https://qr.io/) - Advanced features
+```bash
+npm install qrcode
+node generate-qrcodes.js
+```
 
 ### Step 3: Test QR Codes
 
