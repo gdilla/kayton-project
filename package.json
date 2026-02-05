@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gdilla/kayton-project#readme",
   "dependencies": {
+    "puppeteer": "^24.36.1",
     "qrcode": "^1.5.4"
   }
 }
